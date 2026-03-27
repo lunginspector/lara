@@ -84,7 +84,7 @@ struct ContentView: View {
                         .disabled(!mgr.kfsready)
                         .confirmationDialog("Set System Font", isPresented: $showfontsheet, titleVisibility: .visible) {
                             Button("Comic Sans MS") {
-                                let success = mgr.kfsoverwrite(target: laramgr.fontpath, withBundledFont: "Comic Sans MS")
+                                let success = mgr.kfsoverwrite(target: laramgr.fontpath, withBundledFont: "Comic Sans SFUI")
                                 
                                 if success {
                                     mgr.logmsg("font changed to Comic Sans MS")
