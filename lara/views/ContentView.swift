@@ -9,6 +9,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct ContentView: View {
+    @AppStorage("showfmintabs") private var showfmintabs: Bool = true
     @ObservedObject private var mgr = laramgr.shared
     @State private var uid: uid_t = getuid()
     @State private var pid: pid_t = getpid()
@@ -27,7 +28,7 @@ struct ContentView: View {
                         }
                     }
                 } else {
-                    Section("Kernel Read Write") {
+                    Section {
                         Button {
                             mgr.run()
                         } label: {
@@ -96,6 +97,12 @@ struct ContentView: View {
                                     .foregroundColor(.secondary)
                             }
                         }
+                    } header: {
+                        Text("Kernel Read Write")
+                    } footer: {
+                        if g_isunsupported {
+                            Text("Your device/installation method may not be supported.")
+                        }
                     }
 
                     Section("Virtual File System") {
@@ -137,8 +144,15 @@ struct ContentView: View {
                             NavigationLink("Font Overwrite") {
                                 FontPicker(mgr: mgr)
                             }
+                            
                             NavigationLink("DirtyZero (Broken)") {
                                 ZeroView(mgr: mgr)
+                            }
+
+                            if !showfmintabs {
+                                NavigationLink("File Manager") {
+                                    SantanderView(startPath: "/")
+                                }
                             }
                             
                             if 1 == 2 {
