@@ -15,6 +15,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: show repo structure
+          run: ls -R
+
       - name: build ipa
         run: |
           xcodebuild \
