@@ -52,8 +52,8 @@
 				other/Assets.xcassets/unknown.imageset,
 				other/Assets.xcassets/unknown.imageset/Contents.json,
 				other/Assets.xcassets/unknown.imageset/DefaultIcon-60@3x~iphone.png,
-				other/Assets.xcassets/unknown.imageset/DefaultIcon-60@3x~iphone 1.png,
-				other/Assets.xcassets/unknown.imageset/DefaultIcon-60@3x~iphone 2.png,
+				"other/Assets.xcassets/unknown.imageset/DefaultIcon-60@3x~iphone 1.png",
+				"other/Assets.xcassets/unknown.imageset/DefaultIcon-60@3x~iphone 2.png",
 			);
 			target = CC1C8B382F71DF9C00206982 /* lara */;
 		};
